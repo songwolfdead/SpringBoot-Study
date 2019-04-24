@@ -3,23 +3,23 @@ server:
 spring:
   datasource:
     master:
-      password: abc123
-      url: jdbc:mysql://193.112.100.103:3306/master?useUnicode=true&characterEncoding=UTF-8
-      driver-class-name: com.mysql.jdbc.Driver
+      password: root
+      url: jdbc:mysql://127.0.0.1:3306/master?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
+      driver-class-name: com.mysql.cj.jdbc.Driver
       username: root
       type: com.zaxxer.hikari.HikariDataSource
     cluster:
     - key: slave1
-      password: abc123
-      url: jdbc:mysql://193.112.100.103:3306/slave1?useUnicode=true&characterEncoding=UTF-8
+      password: root
+      url: jdbc:mysql://127.0.0.1:3306/slave1?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
       idle-timeout: 20000
-      driver-class-name: com.mysql.jdbc.Driver
+      driver-class-name: com.mysql.cj.jdbc.Driver
       username: root
       type: com.zaxxer.hikari.HikariDataSource
     - key: slave2
-      password: abc123
-      url: jdbc:mysql://193.112.100.103:3306/slave2?useUnicode=true&characterEncoding=UTF-8
-      driver-class-name: com.mysql.jdbc.Driver
+      password: root
+      url: jdbc:mysql://127.0.0.1:3306/slave2?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
+      driver-class-name: com.mysql.cj.jdbc.Driver
       username: root
 mybatis:
   mapper-locations: classpath:/mybatis/mapper/*.xml
